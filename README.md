@@ -42,4 +42,14 @@ Isloation virtual environments so that we can install required dependencies in t
 import uv
 uv init --python 3.13 : This initiates a python environment
 uv run python -V : To run environment
+We need a active project to run uv and uv command
 
+docker build -t test:pandas
+The above command will build a docker image 
+
+docker run -it --entrypoint=bash --rm test:pandas
+This command will run the docker image, start a terminal with entry point as Bash and --rm will remove everything when we exit from the image
+
+ENTRYPOINT ["python", "venv_pipeline.py"] - When we define a entry point in docker file the image will already know the previous installs, copy and directory so it will not run again
+
+docker inspect - The shows if the image behaves oddly
