@@ -1,4 +1,5 @@
 FROM python:3.13.11-slim
+COPY --from=ghcr.io/astral-sh/uv:lastest /uv /bin/
 
 RUN pip install pandas pyarrow fastparquet
 
